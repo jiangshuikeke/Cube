@@ -1,0 +1,26 @@
+/*
+  english.strings
+  Cube-HD
+
+  Created by 陈沈杰 on 2023/2/1.
+  
+*/
+"选择魔方" = "Select a cube";
+"让对方几秒" = "The rival starts first";
+"DNF" = "DNF";
+"重新开始" = "Restart";
+"切换语言" = "中文";
+"确定" = "OK";
+"取消" = "Cancel";
+"输入时间" = "Time";
+"单位为秒" = "Seconds";
+"二阶速拧" = "2x2";
+"三阶魔方" = "3x3";
+"四阶速拧" = "4x4";
+"五阶速拧" = "5x5";
+"五魔方" = "Megaminx";
+"金字塔" = "Pyramid";
+"斜转" = "Skewb";
+"三阶单手" = "3x3 OH";
+"三阶盲拧" = "3x3 BLD";
+
