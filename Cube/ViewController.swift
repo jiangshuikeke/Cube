@@ -8,6 +8,7 @@
 import UIKit
 import AVFoundation
 import AudioToolbox
+import WebKit
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
@@ -94,6 +95,21 @@ class ViewController: UIViewController {
     }
     
     //MARK: - 变量
+    private let advURL = "https://v.douyin.com/ihJP948b"
+
+    private lazy var advButton:UIImageView = {
+        let imageView = UIImageView(frame: .init(origin: .zero, size: .init(width: ScreenWidth/4, height: 36)))
+        imageView.center = view.center
+        imageView.center.y += 4
+        let image = UIImage(named: "button")
+        imageView.image = image
+        imageView.contentMode = .scaleAspectFit
+        imageView.isUserInteractionEnabled = true
+        imageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(navigateToAdv)))
+        return imageView
+    }()
+    
+    
     private lazy var player0View:UIView = {
         let view = UIView(frame: CGRect(x: 0, y: isIPhoneX ?48:0, width: ScreenWidth, height: AreaHeight))
         view.addSubview(player0TimeLabel)
@@ -500,6 +516,7 @@ extension ViewController{
         view.addSubview(counterView)
         view.addSubview(player1MoreOp)
         view.addSubview(player0MoreOp)
+        view.addSubview(advButton)
         
         view.addSubview(cubePicker1)
         view.addSubview(cubePicker0)
@@ -993,5 +1010,15 @@ extension ViewController:CubePickerDelegate{
         }
         randomStep0.frame.size.width = ScreenWidth
         randomStep1.frame.size.width = ScreenWidth
+    }
+    
+    @objc
+    func navigateToAdv(){
+        guard let adv = URL(string: advURL) else{
+            return
+        }
+        if UIApplication.shared.canOpenURL(adv){
+            UIApplication.shared.open(adv)
+        }
     }
 }
